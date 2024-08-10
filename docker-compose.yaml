@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  db_mps_viveo:
+    image: mysql:8.0.30-debian
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MPS_DATABASE_PASSWORD}
+      MYSQL_DATABASE: ${MPS_DATABASE_NAME}
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./.docker/dbdata:/var/lib/mysql
