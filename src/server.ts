@@ -1,12 +1,15 @@
 import express, {Request, Response} from 'express'
+import configureRoutes from './routes'
 
 const app = express()
 
-app.get("/", (req: Request, res: Response) => {
-    return res.status(200).json({message: "servidor no ar"})
+configureRoutes(app)
+
+app.get("/", (req:Request, res:Response) => {
+    return res.status(200).json("appplication On")
 })
 
-app.listen(5000, () => {
+app.listen(3000, () => {
     console.log("server on")
 })
 

@@ -1,13 +1,10 @@
-import { PrismaClient } from "@prisma/client";
 import express, { Router } from "express";
-import { z } from "zod";
+import RoleController from "../controllers/RoleController";
 
-const router: Router = express.Router()
-const prisma: PrismaClient = new PrismaClient()
+const roleRouter: Router = express.Router()
 
-const role = z.object({
-    description: z.string(),
-    permission: z.string()
-})
 
-router.post("/newRole")
+roleRouter.post("/newRole", RoleController.createRole)
+roleRouter.get("/allRoles", RoleController.listAllRoles)
+
+export default roleRouter

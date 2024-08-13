@@ -1,0 +1,13 @@
+POST http://localhost:3000/newRole
+content-type: application/json
+
+{
+    "description": "Read and write data",
+    "permission": "writer"
+}
+###
+GET http://localhost:3000/
+
+###
+GET http://localhost:3000/allRoles
+
