@@ -1,8 +1,8 @@
 import bodyParser from "body-parser";
-import app from "../server"
+import { Express } from "express";
 import roleRouter from "./roleRoute";
 import authrRouter from "./authRoute";
-import { Express } from "express";
+
 
 
 const configureRoutes = (app: Express) => {

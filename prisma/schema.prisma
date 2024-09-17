@@ -34,3 +34,15 @@ model Role {
 
   @@map("roles")
 }
+
+model Saldo {
+
+  codigo        String  @id
+  forecast      Float
+  vendido       Float
+  estoqueTotal  Float
+  politica      Float
+  coefForecast  Float
+
+  @@map("Saldos")
+}
