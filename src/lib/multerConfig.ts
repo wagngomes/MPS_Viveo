@@ -20,6 +20,6 @@ const storage: multer.StorageEngine = multer.diskStorage({
     }
 });
 
-module.exports = storage;
+export default storage
 
 
