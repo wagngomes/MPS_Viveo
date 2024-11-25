@@ -1,20 +1,16 @@
-import express, {Request, Response} from 'express'
-import configureRoutes from './routes'
-import { Produto } from './utils/Produto'
+import express, { Request, Response } from "express";
+import configureRoutes from "../src/Routes/index";
 
-const app = express()
+const app = express();
 
-configureRoutes(app)
+configureRoutes(app);
 
-app.get("/", (req:Request, res:Response) => {
-    return res.status(200).json("appplication On")
-})
-
-
+app.get("/", (req: Request, res: Response) => {
+  return res.status(200).json("appplication On");
+});
 
 app.listen(3000, () => {
-    console.log("server on")
-})
+  console.log("server on");
+});
 
-
-export default app
+export default app;

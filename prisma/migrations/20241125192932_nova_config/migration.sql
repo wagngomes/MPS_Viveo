@@ -1,0 +1,30 @@
+-- CreateTable
+CREATE TABLE "saldos" (
+    "id" TEXT NOT NULL,
+    "codigo" TEXT NOT NULL,
+    "filial" TEXT NOT NULL,
+    "empresa" TEXT NOT NULL,
+    "descricao" TEXT NOT NULL,
+    "fornecedor" TEXT NOT NULL,
+    "tributacao" TEXT NOT NULL,
+    "status" TEXT NOT NULL,
+    "curva" TEXT NOT NULL,
+    "b_o_" TEXT NOT NULL,
+    "comprador" TEXT NOT NULL,
+    "rota" TEXT NOT NULL,
+    "forecast" DECIMAL(10,2) NOT NULL,
+    "vendido" DECIMAL(10,2) NOT NULL,
+    "media" DECIMAL(10,2) NOT NULL,
+    "classe" TEXT NOT NULL,
+    "estoque" DECIMAL(10,2) NOT NULL,
+    "po_compas" DECIMAL(10,2) NOT NULL,
+    "transferencias" DECIMAL(10,2) NOT NULL,
+    "estoque_total" DECIMAL(10,2) NOT NULL,
+    "CMV" DECIMAL(10,2) NOT NULL,
+    "politica" DECIMAL(10,2) NOT NULL,
+    "periodo" TEXT NOT NULL,
+    "cratedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "saldos_pkey" PRIMARY KEY ("id")
+);

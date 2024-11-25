@@ -1,17 +1,10 @@
 import bodyParser from "body-parser";
 import { Express } from "express";
-import roleRouter from "./roleRoute";
-import authrRouter from "./authRoute";
-
-
+import importSaldosRouter from "../Routes/upLoadSaldos";
 
 const configureRoutes = (app: Express) => {
+  app.use(bodyParser.json());
+  app.use(importSaldosRouter);
+};
 
-    app.use(bodyParser.json())
-    app.use(roleRouter)
-    app.use(authrRouter)
-
-}
-
-
-export default configureRoutes
+export default configureRoutes;

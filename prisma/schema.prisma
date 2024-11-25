@@ -10,39 +10,35 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-
-model User {
-  id            String   @id @default(uuid())
-  name          String
-  email         String   @unique
-  password      String
-  roleId        Int
-  role Role              @relation(fields: [roleId], references: [id])
-
-  @@map("users")
-
-}
-
-model Role {
-  id            Int      @id @default(autoincrement())
-  description   String
-  permission    String
-  user User[]
-
-  @@map("roles")
-}
-
 model Saldo {
+  id              String   @id @default(uuid())
+  codigo          String
+  filial          String
+  empresa         String
+  descricao       String
+  fornecedor      String
+  tributacao      String
+  status          String
+  curva           String
+  b_o_            String
+  comprador       String
+  rota            String
+  forecast        Decimal  @db.Decimal(10, 2)
+  vendido         Decimal  @db.Decimal(10, 2)
+  media           Decimal  @db.Decimal(10, 2)
+  classe          String
+  estoque         Decimal  @db.Decimal(10, 2)
+  po_compas       Decimal  @db.Decimal(10, 2)
+  transferencias  Decimal  @db.Decimal(10, 2)
+  estoque_total   Decimal  @db.Decimal(10, 2)
+  CMV             Decimal  @db.Decimal(10, 2)
+  politica        Decimal  @db.Decimal(10, 2)
+  periodo         String
+  cratedAt        DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 
-  codigo        String  @id
-  forecast      Float
-  vendido       Float
-  estoqueTotal  Float
-  politica      Float
-  coefForecast  Float
-
-  @@map("Saldos")
+  @@map("saldos")
 }
