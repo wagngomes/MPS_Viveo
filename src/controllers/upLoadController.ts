@@ -8,7 +8,6 @@ import csv from "csv";
 
 const prisma: PrismaClient = new PrismaClient();
 
-app.use("/files", express.static("uploads"));
 const upload: multer.Multer = multer({ storage: storage });
 
 interface MulterRequest extends Request {
@@ -22,7 +21,7 @@ class UpLoadController {
       return res.status(400).send("Nenhum arquivo foi enviado.");
     }
 
-    const arquivoImportado = "./uploads/" + req.file.filename;
+    const arquivoImportado = "./src/lib/uploads/" + req.file.filename;
 
     try {
       // Lê e processa o arquivo CSV
